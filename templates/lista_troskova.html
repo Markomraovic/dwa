@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+
+{% block content %}
+<div>
+
+        <table style="width:100%;text-align:left">
+            <tr>
+              <th>Naziv troška</th>
+              <th>Iznos</th> 
+              <th>Opis</th>
+              <th>Obriši</th>
+            </tr>
+            {% for t in svitroskovi %}
+            <tr>
+                <td>{{t[1]}}</td>
+                <td>{{t[2]}}</td>
+                <td>{{t[3]}}</td>
+                <td><button><a href="{{url_for('brisanje', id=t[0], korisnik_id=korisnik[0])}}" method="DELETE">Obriši</a></button></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+
+    </div>
+{% endblock %}

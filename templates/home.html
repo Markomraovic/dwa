@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Troškovnik</title>
+<style>
+.container{
+    width: 100%;
+}
+.inner-container{
+    width: 60%;
+    margin: 8% auto;
+    padding: 10px 0 10px 25px;
+    background-color: bisque;
+    border-radius: 10px;
+}
+.forma{
+    margin-left: 10%;
+}
+a{
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="inner-container">
+        <div>
+
+            <h1>{{korisnik[1]}} {{korisnik[2]}}</h1>
+                
+        </div> 
+        
+        <div>
+    
+            <table style="width:100%;text-align:left; margin-bottom:20px;">
+                <tr>
+                  <th>Naziv troška</th>
+                  <th>Iznos</th> 
+                  <th>Opis</th>
+                </tr>
+                {% for t in svitroskovi %}
+                <tr>
+                    <td>{{t[1]}}</td>
+                    <td>{{t[2]}}</td>
+                    <td>{{t[3]}}</td>
+                </tr>
+    
+                {% endfor %}
+            </table>
+    
+        </div>
+    
+        <div style="text-align: center;"><button><a href="{{url_for('novi_trosak', id=korisnik[0])}}">Novi trošak</a></button>
+            <button><a href="{{url_for('brisanje_template', korisnik_id=korisnik[0])}}">Obriši troškove</a></button>
+            <button><a href="{{url_for('odjava')}}">Odjavi se</a></button>
+        </div>
+    </div>
+    
+
+
+</div>
+
+
+</div>
+</body>
+</html>
+
+
+
+
+

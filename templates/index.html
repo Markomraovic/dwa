@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Troškovnik</title>
+<style>
+.container{
+    width: 100%;
+}
+.inner-container{
+    width: 40%;
+    margin: 15% auto;
+    padding: 10px 0 10px 25px;
+    background-color: bisque;
+    border-radius: 10px;
+}
+.forma{
+    margin-left: 10%;
+}
+.m-b{
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="inner-container">
+        <h1>Prijava u aplikaciju</h1>
+            <div class="forma">
+                <form action="/prijava" method="POST">
+                    Mail: <input type="text" name="mail" class="m-b"><br>
+                    Lozinka: <input type="password" name="lozinka" class="m-b"><br>
+                    <input type="submit" value="Submit">
+                </form>
+                <a href="{{url_for('registracija')}}">Registracija
+                    
+                </a>
+                
+
+            </div>
+        
+        
+        
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+

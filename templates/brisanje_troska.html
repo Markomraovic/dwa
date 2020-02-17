@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Brisanje troškova</title>
+</head>
+<body>
+
+<div>
+    <div>
+
+        <h1>Brisanje troškova</h1>
+            
+    </div> 
+    
+    <div>
+
+        <table style="width:100%;text-align:left">
+            <tr>
+              <th>Naziv troška</th>
+              <th>Iznos</th> 
+              <th>Opis</th>
+              <th>Obriši</th>
+            </tr>
+            {% for t in svitroskovi %}
+            <tr>
+                <td>{{t[1]}}</td>
+                <td>{{t[2]}}</td>
+                <td>{{t[3]}}</td>
+                <td><form action="/brisanje_troska/{{t[0]}}/{{korisnik_id}}" method="POST"><input type="submit" value="Obriši"></form></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+
+    </div>
+
+    <div><button><a href="{{url_for('povratak', korisnik_id=korisnik_id)}}" method="GET">Povratak</a></button>
+    </div>
+
+
+</div>
+
+
+</div>
+</body>
+</html>
+
+
+
+
+
